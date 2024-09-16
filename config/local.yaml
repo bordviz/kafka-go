@@ -1,0 +1,25 @@
+env: local
+
+kafka: 
+  kafka_brokers: localhost:9092,localhost:9093
+  producer_asks: all
+  produce_retries: 5
+  message_topic: messages
+  message_consumer_group: messagesGroup
+
+consumer_1:
+  kafka_brokers: localhost:9092,localhost:9093
+  consumer_group: firstMessagesGroup
+  message_topic: messages
+
+consumer_2:
+  kafka_brokers: localhost:9092,localhost:9093
+  consumer_group: secondMessagesGroup
+  message_topic: messages
+
+http_server:
+  host: localhost
+  protocol: http
+  port: 8000
+  timeout: 5s
+  idle_timeout: 60s
